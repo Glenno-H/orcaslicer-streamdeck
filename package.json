@@ -1,0 +1,46 @@
+{
+  "name": "orcaslicer-streamdeck",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free, open-source Stream Deck plugin for OrcaSlicer (Windows).",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://github.com/Glenno-H/orcaslicer-streamdeck",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glenno-H/orcaslicer-streamdeck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Glenno-H/orcaslicer-streamdeck/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "assets": "node scripts/build-assets.mjs",
+    "build": "npm run assets && rollup -c",
+    "watch": "rollup -c -w",
+    "test": "node --import tsx --test test/*.test.ts",
+    "validate": "streamdeck validate au.gkw.orcaslicer.sdPlugin",
+    "pack": "npm run build && streamdeck pack au.gkw.orcaslicer.sdPlugin --output dist --force",
+    "check": "tsc -p . && npm test"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.4",
+    "koffi": "^2.16.4"
+  },
+  "devDependencies": {
+    "@elgato/cli": "^1.10.4",
+    "@elgato/schemas": "^0.6.0",
+    "@elgato/utils": "^0.6.2",
+    "@resvg/resvg-js": "^2.6.2",
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.2",
+    "@rollup/plugin-typescript": "^12.3.1",
+    "@tsconfig/node24": "^24.0.6",
+    "@types/node": "^20.19.43",
+    "rollup": "^4.68.5",
+    "tslib": "^2.9.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

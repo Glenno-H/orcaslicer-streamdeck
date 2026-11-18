@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.sdPlugin/bin
+*.sdPlugin/logs
+*.sdPlugin/LICENSE.txt
+*.sdPlugin/NOTICE.md
+*.sdPlugin/imgs
+*.sdPlugin/ui
+*.sdPlugin/manifest.json
